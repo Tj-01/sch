@@ -1,12 +1,11 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /*background: linear-gradient(rgba(9, 5, 54), rgba(5, 4, 46, 0.7));*/
     color: #333; /* Default text color */
     transition: background-color 0.3s, color 0.3s;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
@@ -23,23 +22,25 @@ body.light-mode {
     /* Light mode styles here */
     background-color: #f0f0f0;
     color: #333;
-  }
-  
-  /* Dark mode styles */
-  body.dark-mode {
+}
+
+/* Dark mode styles */
+body.dark-mode {
     /* Dark mode styles here */
     background-color: #333;
     color: #f0f0f0;
-  }
+}
+
 footer{
     background-color: #333;
     color: #fff;
     text-align: center;
 }
+
 header {
-    /*background-color: whitesmoke;*/
     padding: 20px 0;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -116,7 +117,7 @@ nav ul li a.active {
     height: 50%;
     width: 50%;
 }
-#home .btn{
+#home.btn{
     margin-top: 30px;
 }
 
@@ -132,7 +133,7 @@ nav ul li a.active {
 #hero a.blue{
     color: #fff;
     background: rgb(21, 21, 100);
-    transition: .3s ease;
+    transition:.3s ease;
 }
 
 #hero a.blue:hover{
@@ -143,7 +144,7 @@ nav ul li a.active {
 #hero a.yellow{
     color: #fff;
     background: #fdc93b;
-    transition: .3s ease;
+    transition:.3s ease;
 }
 
 #hero a.yellow:hover{
@@ -156,7 +157,7 @@ nav ul li a.active {
     text-align: center;
 }
 
-  .image {
+.image {
     width: 50%;
     height: 50%;
     object-fit: cover;
@@ -164,16 +165,16 @@ nav ul li a.active {
     box-shadow: 0 0 20px 5px green;
     animation: glow 2s ease-in-out infinite alternate; /* Blinking animation */
     display: block;
- }
+}
 
-  @keyframes glow {
+@keyframes glow {
     0% {
       box-shadow: 0 0 20px 5px green;
     }
     100% {
       box-shadow: 0 0 30px 10px green; /* Increase glow intensity */
     }
-  }
+}
 
 .grid-container {
     display: grid;
@@ -184,20 +185,20 @@ nav ul li a.active {
 .grid-item {
     position: relative;
     overflow: hidden;
-  }
+}
 
-  .imagef{
+.imagef{
     display: block;
     width: 100%;
     height: auto;
     transition: transform 0.5s ease; /* Add transition for smooth hover effect */
-  }
+}
 
-  .grid-item:hover .imagef {
+.grid-item:hover.imagef {
     transform: scale(1.1); /* Zoom in effect on hover */
-  }
+}
 
-  .overlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -215,17 +216,19 @@ nav ul li a.active {
     font-size: 30px;
     text-decoration: wavy;
     text-align: center;
-  }
+}
 
-  .grid-item:hover .overlay {
+.grid-item:hover.overlay {
     opacity: 1;
-  }
-  h3 {
+}
+
+h3 {
     font-family: Arial, sans-serif; 
     text-align: center; 
     padding: 20px; 
-  }
-  .branch{
+}
+
+.branch{
     text-decoration: none;
     font-size: 0.9rem;
     padding: 13px 35px;
@@ -239,6 +242,7 @@ nav ul li a.active {
     color: rgb(21, 21, 100);
     background: #fff;
 }
+
 #registration{
     padding: 6vw 8vw 6vw 8vw;
     background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url("u10.jpg");
@@ -251,11 +255,11 @@ nav ul li a.active {
     align-items: center;
 }
 
-#registration .reminder{
+#registration.reminder{
     color: #fff;
     font-weight: 600;
 }
-#registration .btn{
+#registration.btn{
     margin-top: 20px;
 }
 
@@ -268,24 +272,66 @@ nav ul li a.active {
     border-radius: 5px;
     color: #fff;
     background: blue;
-    transition: .3s ease;
+    transition:.3s ease;
 }
 
 #registration a.btn:hover{
     color: rgb(21, 21, 100);
-    background:#fff;
-}
+    background:#fff;}
+
 .i1{
     display: flex;
     align-items: center;
 }
+
 .texts{
     column-count: 4;
     column-gap: 20px;
 }
+
 .logoo{
     margin-left: 40%;
 }
+
 h4{
     font-weight: 900;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .hero {
+        padding-top: 20px; /* Reduce padding for smaller screens */
+    }
+
+  .hero h2 {
+        font-size: 1.8rem; /* Smaller font size for better readability */
+    }
+
+  .hero p {
+        width: 80%; /* Adjust width for better readability */
+    }
+
+  .classes,.branches,.activities,.about,.programs,.news,.contact,.registration {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+  .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid layout for smaller screens */
+    }
+
+  .overlay {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+  .branch {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+
+    #registration {
+        padding: 4vw 6vw; /* Adjust padding for smaller screens */
+    }
+
+  .texts {
+        column-count: 2; /* Adjust column count for smaller screens */
+    }
 }
